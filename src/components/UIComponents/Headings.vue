@@ -1,13 +1,15 @@
 <template>
   <div>
-    <div
-      class="tw-text-left tw-shadow-sm"
-    >
+    <div class="tw-text-left tw-shadow-sm">
       <div class="tw-text-xl tw-p-2 tw-font-thin">
         {{ items.name }}
       </div>
       <div class="tw-flex tw-overflow-y-hidden">
-        <horizontal-item-slider :scroll_items="items.sub_items" :item_active_class="'tw-border-b-4'"/>
+        <horizontal-item-slider
+          :scroll_items="items.sub_items"
+          :item_active_class="'tw-border-b-4'"
+          :item_style_style="'min-width:8rem; min-height:2rem'"
+        />
       </div>
     </div>
   </div>

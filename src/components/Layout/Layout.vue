@@ -28,7 +28,9 @@ export default Vue.extend({
   name: 'Layout',
   mounted() {
     EventBus.$on(EVENT_BUS_EVENTS.CHANGE_NAVIGATION, (val) => {
-      this.changeActiveItem(val);
+      if (val.link) {
+        this.changeActiveItem(val);
+      }
     });
   },
   methods: {
@@ -100,14 +102,16 @@ export default Vue.extend({
         },
         {
           name: 'Loans',
-          link: '/loans/all-expenses',
+          link: '/loans/all-loans',
           icon: 'account_balance',
           sub_items: [
             {
               name: 'all loans',
+              link: '/loans/all-loans',
             },
             {
-              name: 'create loan',
+              link: '/loans/add-loan',
+              name: 'add loan',
             },
           ],
         },

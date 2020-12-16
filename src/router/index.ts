@@ -13,6 +13,29 @@ const routes: Array<RouteConfig> = [
     },
     children: [
       {
+        path: '/loans',
+        name: 'Loans',
+        children: [
+          {
+            path: '/loans/all-loans',
+            name: 'AllLoans',
+            component: () => {
+              return import('@/components/Loans/AllLoans/AllLoans.vue');
+            },
+          },
+          {
+            path: '/loans/add-loan',
+            name: 'AddLoan',
+            component: () => {
+              return import('@/components/Loans/AddLoan/AddLoan.vue');
+            },
+          },
+        ],
+        component: () => {
+          return import('@/components/Loans/Loans.vue');
+        },
+      },
+      {
         path: '/expenses',
         name: 'Expenses',
         component: () => {
@@ -41,9 +64,7 @@ const routes: Array<RouteConfig> = [
             path: '/expenses/analysis',
             name: 'Analysis',
             component: () => {
-              return import(
-                '@/components/Expenses/Analysis/Analysis.vue'
-              );
+              return import('@/components/Expenses/Analysis/Analysis.vue');
             },
           },
         ],
