@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-p-3">
+  <div class="tw-p-3 tw-overflow-y-scroll tw-h-full">
     <div
       class="tw-flex tw-shadow-md tw-items-center tw-p-2 tw-justify-between "
       v-for="(expense, key) in expenses"

@@ -39,7 +39,10 @@
       rows="5"
     ></textarea>
 
-    <button class="tw-bg-blue-900 tw-w-3/4 tw-p-3 tw-mt-3 tw-text-white">
+    <button
+      @click="addExpenseEvent"
+      class="tw-bg-blue-900 tw-w-3/4 tw-p-3 tw-mt-3 tw-text-white"
+    >
       Submit
     </button>
   </div>
@@ -47,8 +50,17 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { addExpense } from '@/core/supabase_handlers/expenses/add_expense';
+
 export default Vue.extend({
   name: 'AddExpenses',
+  methods: {
+    addExpenseEvent() {
+      addExpense(this.formData).then((val) => {
+        console.log(val);
+      });
+    },
+  },
   data() {
     return {
       formData: {

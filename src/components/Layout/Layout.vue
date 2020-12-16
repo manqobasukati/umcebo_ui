@@ -28,7 +28,6 @@ export default Vue.extend({
   name: 'Layout',
   mounted() {
     EventBus.$on(EVENT_BUS_EVENTS.CHANGE_NAVIGATION, (val) => {
-      console.log('not clalled')
       this.changeActiveItem(val);
     });
   },
@@ -44,7 +43,28 @@ export default Vue.extend({
   data() {
     return {
       active_bottom_item: 'Expenses',
-      heading_items: { name: 'Nothing', sub_items: [] },
+      heading_items: {
+        name: 'Expenses',
+        link: '/expenses/all-expenses',
+        icon: 'account_balance_wallet',
+        sub_items: [
+          {
+            name: 'all expenses',
+            link: '/expenses/all-expenses',
+            icon: 'account_balance_wallet',
+          },
+          {
+            name: 'add expenses',
+            link: '/expenses/add-expenses',
+            icon: 'account_balance_wallet',
+          },
+          {
+            name: 'analysis',
+            link: '/expenses/analysis',
+            icon: 'account_balance_wallet',
+          },
+        ],
+      },
       more_items: [
         {
           name: 'Calculators',
