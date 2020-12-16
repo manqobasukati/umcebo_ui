@@ -5,20 +5,17 @@ import mutations from './mutations';
 import actions from './actions';
 import getters from './getters';
 import state, { StateInterface } from './state';
-import expenses from './expenses'
-
-
-
-
+import expenses from './expenses';
 
 Vue.use(Vuex);
 
+export enum MODULES {
+  'EXPENSES' = 'expenses'
+}
+
 const store = new Vuex.Store<StateInterface>({
   modules: {
-expenses,
-
-
-
+    expenses,
   },
   state,
   actions,
