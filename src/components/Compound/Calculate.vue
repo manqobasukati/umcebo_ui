@@ -60,10 +60,18 @@
         Calculate
       </button>
     </div>
-    <div class="tw-px-2 tw-text-xs  tw-text-right" v-if="!more_parameters" @click="more_parameters = !more_parameters">
+    <div
+      class="tw-px-2 tw-text-xs  tw-text-right"
+      v-if="!more_parameters"
+      @click="more_parameters = !more_parameters"
+    >
       More parameters.
     </div>
-     <div class="tw-px-2 tw-text-xs  tw-text-right" v-if="more_parameters" @click="more_parameters = !more_parameters">
+    <div
+      class="tw-px-2 tw-text-xs  tw-text-right"
+      v-if="more_parameters"
+      @click="more_parameters = !more_parameters"
+    >
       less parameters.
     </div>
     <css-loader v-if="load_results" />
@@ -71,28 +79,28 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import cssLoader from '@/components/UIComponents/cssLoader.vue';
-import { CALCULATOR_ACTIONS } from '@/store/calculator/actions';
-import { MODULES } from '@/store';
-import { InvestmentDetails } from '@/core/types/calculate.model';
+import Vue from "vue";
+import cssLoader from "@/components/UIComponents/cssLoader.vue";
+import { CALCULATOR_ACTIONS } from "@/store/calculator/actions";
+import { MODULES } from "@/store";
+import { InvestmentDetails } from "@/core/types/calculate.model";
 export default Vue.extend({
-  name: 'Calculate',
+  name: "Calculate",
   components: {
-    cssLoader,
+    cssLoader
   },
   data() {
     return {
       more_parameters: false,
       load_results: false,
       investment_details: {
-        principal: '',
-        rate: '',
+        principal: "",
+        rate: "",
         compound_period: 1,
-        time: '',
-        addition: '',
-        escalation:''
-      },
+        time: "",
+        addition: "",
+        escalation: ""
+      }
     };
   },
   methods: {
@@ -108,20 +116,20 @@ export default Vue.extend({
           rate: parseFloat(this.investment_details.rate),
           time: parseFloat(this.investment_details.time),
           compound_period: this.investment_details.compound_period,
-          esclation:parseFloat(this.investment_details.escalation) || 0,
-          addition:parseFloat(this.investment_details.addition) || 0
+          esclation: parseFloat(this.investment_details.escalation) || 0,
+          addition: parseFloat(this.investment_details.addition) || 0
         };
         this.$store.dispatch(action, payload).then(() => {
           const action = `${MODULES.CALCULATOR}/${CALCULATOR_ACTIONS.ACTIVE_VIEW}`;
           this.$store.dispatch(action, {
-            name: 'results',
-            link: '/calculator/results',
+            name: "results",
+            link: "/calculator/results"
           });
 
-          this.$router.push({path:'/calculator/results'})
+          this.$router.push({ path: "/calculator/results" });
         });
       }, 2000);
-    },
-  },
+    }
+  }
 });
 </script>

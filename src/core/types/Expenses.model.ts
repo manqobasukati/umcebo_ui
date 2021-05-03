@@ -1,8 +1,8 @@
-export interface Expenses  {
+export interface Expenses {
   id?: number;
   title: string;
   action: string;
   amount: number;
   description: string;
-  date:Date
-};
+  date: Date;
+}

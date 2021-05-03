@@ -1,10 +1,10 @@
-import { MutationTree } from 'vuex';
+import { MutationTree } from "vuex";
 
-import { CalculatorInterface } from './state';
+import { CalculatorInterface } from "./state";
 
 export enum CALCULATOR_MUTATIONS {
-  INVESTMENT_DETAILS = 'investment_details',
-  ACTIVE_VIEW = 'active_view',
+  INVESTMENT_DETAILS = "investment_details",
+  ACTIVE_VIEW = "active_view"
 }
 
 const mutations: MutationTree<CalculatorInterface> = {
@@ -16,7 +16,7 @@ const mutations: MutationTree<CalculatorInterface> = {
   },
   [CALCULATOR_MUTATIONS.ACTIVE_VIEW](state: CalculatorInterface, payload) {
     state.active_view = payload;
-  },
+  }
 };
 
 export default mutations;

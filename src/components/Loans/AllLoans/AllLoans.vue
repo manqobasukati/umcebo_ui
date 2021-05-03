@@ -12,19 +12,19 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 
-import HorizontalItemSlider from '@/components/UIComponents/HorizontalItemSlider.vue';
+import HorizontalItemSlider from "@/components/UIComponents/HorizontalItemSlider.vue";
 
 export default Vue.extend({
-  name: 'AllLoan',
+  name: "AllLoan",
   data() {
     return {
-      letters: ['a', 'b', 'c'],
+      letters: ["a", "b", "c"]
     };
   },
   components: {
-    HorizontalItemSlider,
-  },
+    HorizontalItemSlider
+  }
 });
 </script>

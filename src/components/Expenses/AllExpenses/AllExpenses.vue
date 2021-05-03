@@ -33,17 +33,17 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import { mapState } from 'vuex';
+import Vue from "vue";
+import { mapState } from "vuex";
 
-import { Expenses } from '@/core/types/Expenses.model';
-import { fetchExpenses } from '@/core/supabase_handlers/expenses/fetch_expenses';
-import { MODULES } from '@/store';
-import { ExpensesInterface } from '@/store/expenses/state';
-import { EXPENSES_ACTIONS } from '@/store/expenses/actions';
+import { Expenses } from "@/core/types/Expenses.model";
+import { fetchExpenses } from "@/core/supabase_handlers/expenses/fetch_expenses";
+import { MODULES } from "@/store";
+import { ExpensesInterface } from "@/store/expenses/state";
+import { EXPENSES_ACTIONS } from "@/store/expenses/actions";
 
 export default Vue.extend({
-  name: 'AllExpenses',
+  name: "AllExpenses",
   mounted() {
     const action = `${MODULES.EXPENSES}/${EXPENSES_ACTIONS.ALL_EXPENSES}`;
 
@@ -53,8 +53,8 @@ export default Vue.extend({
     ...mapState(MODULES.EXPENSES, {
       expenses(state: ExpensesInterface) {
         return state.all_expenses as Expenses[];
-      },
-    }),
-  },
+      }
+    })
+  }
 });
 </script>

@@ -6,20 +6,20 @@ export interface CalculatorInterface {
 
 const state: CalculatorInterface = {
   investment_details: null as null | any,
-  active_view: { name: 'calculate' },
+  active_view: { name: "calculate" },
   heading: {
-    name: 'Calculator',
+    name: "Calculator",
     sub_items: [
       {
-        name: 'calculate',
-        link: '/calculator/calculate',
+        name: "calculate",
+        link: "/calculator/calculate"
       },
       {
-        name: 'results',
-        link: '/calculator/results',
-      },
-    ],
-  },
+        name: "results",
+        link: "/calculator/results"
+      }
+    ]
+  }
 };
 
 export default state;

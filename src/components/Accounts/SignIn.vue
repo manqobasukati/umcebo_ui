@@ -24,14 +24,13 @@
           forgot password?
         </div>
       </div>
-   
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 export default Vue.extend({
-  name: 'SignIn',
+  name: "SignIn"
 });
 </script>

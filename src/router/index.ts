@@ -1,139 +1,139 @@
-import Vue from 'vue';
-import VueRouter, { RouteConfig } from 'vue-router';
-import Home from '../views/Home.vue';
+import Vue from "vue";
+import VueRouter, { RouteConfig } from "vue-router";
+import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
-    path: '/calculator',
-    name: 'Calculator',
+    path: "/calculator",
+    name: "Calculator",
     children: [
       {
-        path: '/calculator/calculate',
-        name: 'Calculate',
+        path: "/calculator/calculate",
+        name: "Calculate",
         component: () => {
-          return import('@/components/Compound/Calculate.vue');
-        },
+          return import("@/components/Compound/Calculate.vue");
+        }
       },
       {
-        path: '/calculator/results',
-        name: 'Results',
+        path: "/calculator/results",
+        name: "Results",
         component: () => {
-          return import('@/components/Compound/Results.vue');
-        },
-      },
+          return import("@/components/Compound/Results.vue");
+        }
+      }
     ],
     component: () => {
-      return import('@/components/Compound/Calculator.vue');
-    },
+      return import("@/components/Compound/Calculator.vue");
+    }
   },
   {
-    path: '/',
-    name: 'Layout',
+    path: "/",
+    name: "Layout",
     component: () => {
-      return import('@/components/Layout/Layout.vue');
+      return import("@/components/Layout/Layout.vue");
     },
 
     children: [
       {
-        path: '/loans',
-        name: 'Loans',
+        path: "/loans",
+        name: "Loans",
         children: [
           {
-            path: '/loans/all-loans',
-            name: 'AllLoans',
+            path: "/loans/all-loans",
+            name: "AllLoans",
             component: () => {
-              return import('@/components/Loans/AllLoans/AllLoans.vue');
-            },
+              return import("@/components/Loans/AllLoans/AllLoans.vue");
+            }
           },
           {
-            path: '/loans/add-loan',
-            name: 'AddLoan',
+            path: "/loans/add-loan",
+            name: "AddLoan",
             component: () => {
-              return import('@/components/Loans/AddLoan/AddLoan.vue');
-            },
-          },
+              return import("@/components/Loans/AddLoan/AddLoan.vue");
+            }
+          }
         ],
         component: () => {
-          return import('@/components/Loans/Loans.vue');
-        },
+          return import("@/components/Loans/Loans.vue");
+        }
       },
       {
-        path: '/expenses',
-        name: 'Expenses',
+        path: "/expenses",
+        name: "Expenses",
         component: () => {
-          return import('@/components/Expenses/Expenses.vue');
+          return import("@/components/Expenses/Expenses.vue");
         },
         children: [
           {
-            path: '/expenses/all-expenses',
-            name: 'AllExpenses',
+            path: "/expenses/all-expenses",
+            name: "AllExpenses",
             component: () => {
               return import(
-                '@/components/Expenses/AllExpenses/AllExpenses.vue'
+                "@/components/Expenses/AllExpenses/AllExpenses.vue"
               );
-            },
+            }
           },
           {
-            path: '/expenses/add-expenses',
-            name: 'AddExpenses',
+            path: "/expenses/add-expenses",
+            name: "AddExpenses",
             component: () => {
               return import(
-                '@/components/Expenses/AddExpenses/AddExpenses.vue'
+                "@/components/Expenses/AddExpenses/AddExpenses.vue"
               );
-            },
+            }
           },
           {
-            path: '/expenses/analysis',
-            name: 'Analysis',
+            path: "/expenses/analysis",
+            name: "Analysis",
             component: () => {
-              return import('@/components/Expenses/Analysis/Analysis.vue');
-            },
-          },
-        ],
-      },
-    ],
+              return import("@/components/Expenses/Analysis/Analysis.vue");
+            }
+          }
+        ]
+      }
+    ]
   },
   {
-    path: '/accounts',
-    name: 'Accounts',
-    redirect: '/accounts/sign-in',
+    path: "/accounts",
+    name: "Accounts",
+    redirect: "/accounts/sign-in",
     component: () => {
-      return import('@/components/Accounts/Accounts.vue');
+      return import("@/components/Accounts/Accounts.vue");
     },
     children: [
       {
-        path: '/accounts/sign-in',
-        name: 'SignIn',
+        path: "/accounts/sign-in",
+        name: "SignIn",
         component: () => {
-          return import('@/components/Accounts/SignIn.vue');
-        },
+          return import("@/components/Accounts/SignIn.vue");
+        }
       },
       {
-        path: '/accounts/sign-up',
-        name: 'SignUp',
+        path: "/accounts/sign-up",
+        name: "SignUp",
         component: () => {
-          return import('@/components/Accounts/SignUp.vue');
-        },
-      },
-    ],
+          return import("@/components/Accounts/SignUp.vue");
+        }
+      }
+    ]
   },
   {
-    path: '/about',
-    name: 'About',
+    path: "/about",
+    name: "About",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/About.vue'),
-  },
+      import(/* webpackChunkName: "about" */ "../views/About.vue")
+  }
 ];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes,
+  routes
 });
 
 export default router;

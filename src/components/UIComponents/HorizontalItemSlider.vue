@@ -20,28 +20,33 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import { EventBus } from '@/main';
-import { EVENT_BUS_EVENTS } from '@/core/events';
+import Vue from "vue";
+import { EventBus } from "@/main";
+import { EVENT_BUS_EVENTS } from "@/core/events";
 
 export default Vue.extend({
-  name: 'HorizontalLetterSlider',
-  props: ['scroll_items', 'item_style', 'item_active_class','item_style_style'],
+  name: "HorizontalLetterSlider",
+  props: [
+    "scroll_items",
+    "item_style",
+    "item_active_class",
+    "item_style_style"
+  ],
   data() {
     return {
-      active_item: this.scroll_items[0],
+      active_item: this.scroll_items[0]
     };
   },
   methods: {
     changeActiveItem(_active_item: string) {
       this.active_item = _active_item;
-      this.$emit('set_active_item', _active_item);
-     
+      this.$emit("set_active_item", _active_item);
+
       if (this.active_item.link) {
-        console.log('here');
+        console.log("here");
         EventBus.$emit(EVENT_BUS_EVENTS.CHANGE_NAVIGATION, _active_item);
       }
-    },
-  },
+    }
+  }
 });
 </script>

@@ -1,10 +1,10 @@
 <template>
-    <div>sign in</div>
+  <div>sign in</div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from "vue";
 export default Vue.extend({
-    name:'ForgotPassword'
-})
+  name: "ForgotPassword"
+});
 </script>

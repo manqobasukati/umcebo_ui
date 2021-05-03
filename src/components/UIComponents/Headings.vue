@@ -17,18 +17,17 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import HorizontalItemSlider from './HorizontalItemSlider.vue';
+import Vue from "vue";
+import HorizontalItemSlider from "./HorizontalItemSlider.vue";
 export default Vue.extend({
   components: {
-    HorizontalItemSlider,
+    HorizontalItemSlider
   },
-  name: 'Headings',
-  props: ['items'],
-  methods:{
-    setActiveItem(data:any){
-    
-      this.$emit('headings_set_active_item',data)
+  name: "Headings",
+  props: ["items"],
+  methods: {
+    setActiveItem(data: any) {
+      this.$emit("headings_set_active_item", data);
     }
   }
 });

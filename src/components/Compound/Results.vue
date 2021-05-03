@@ -53,30 +53,30 @@
 </template>
 
 <script lang="ts">
-import { MODULES } from '@/store';
-import Vue from 'vue';
-import { mapState } from 'vuex';
+import { MODULES } from "@/store";
+import Vue from "vue";
+import { mapState } from "vuex";
 
-import { CalculatorInterface } from '@/store/calculator/state';
+import { CalculatorInterface } from "@/store/calculator/state";
 
-import { InvestmentDetails } from '@/core/types/calculate.model';
+import { InvestmentDetails } from "@/core/types/calculate.model";
 
 export default Vue.extend({
-  name: 'Results',
+  name: "Results",
   data() {
     return {
       compound_period_lookup: {
-        1: 'yearly',
-        12: 'monthly',
-      } as { [name: number]: string },
+        1: "yearly",
+        12: "monthly"
+      } as { [name: number]: string }
     };
   },
   computed: {
     ...mapState(MODULES.CALCULATOR, {
       investment_details(state: CalculatorInterface) {
         return state.investment_details as InvestmentDetails;
-      },
-    }),
-  },
+      }
+    })
+  }
 });
 </script>

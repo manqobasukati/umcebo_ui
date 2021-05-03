@@ -1,12 +1,12 @@
 <template>
-    <div>
-        Analysis here
-    </div>
+  <div>
+    Analysis here
+  </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from "vue";
 export default Vue.extend({
-    name:'Analysis'
-})
+  name: "Analysis"
+});
 </script>

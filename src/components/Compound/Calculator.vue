@@ -33,21 +33,21 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import { mapState } from 'vuex';
+import Vue from "vue";
+import { mapState } from "vuex";
 
-import { MODULES } from '@/store';
+import { MODULES } from "@/store";
 
-import { CalculatorInterface } from '@/store/calculator/state';
+import { CalculatorInterface } from "@/store/calculator/state";
 
-import actions, { CALCULATOR_ACTIONS } from '@/store/calculator/actions';
-import Headings from '@/components/UIComponents/Headings.vue';
+import actions, { CALCULATOR_ACTIONS } from "@/store/calculator/actions";
+import Headings from "@/components/UIComponents/Headings.vue";
 
-import BottomNavigationBarMore from '../UIComponents/navigation/bottomNavigationBarMore.vue';
+import BottomNavigationBarMore from "../UIComponents/navigation/bottomNavigationBarMore.vue";
 
 export default Vue.extend({
   components: { Headings, BottomNavigationBarMore },
-  name: 'Calculator',
+  name: "Calculator",
   methods: {
     set_active_subitem(val: string) {
       const action = `${MODULES.CALCULATOR}/${CALCULATOR_ACTIONS.ACTIVE_VIEW}`;
@@ -61,69 +61,69 @@ export default Vue.extend({
       // }
 
       this.$router.replace({ path: val.link });
-    },
+    }
   },
   data() {
     return {
-      active_bottom_item: 'Expenses',
+      active_bottom_item: "Expenses",
       more_items: [
         {
-          name: 'Calculators',
-          link: '/calculator/calculate',
-          icon: 'functions',
+          name: "Calculators",
+          link: "/calculator/calculate",
+          icon: "functions"
         },
         {
-          name: 'Settings',
-          icon: 'settings',
-        },
+          name: "Settings",
+          icon: "settings"
+        }
       ],
       nav_items: [
         {
-          name: 'Expenses',
-          link: '/expenses/all-expenses',
-          icon: 'account_balance_wallet',
+          name: "Expenses",
+          link: "/expenses/all-expenses",
+          icon: "account_balance_wallet",
           sub_items: [
             {
-              name: 'all expenses',
-              link: '/expenses/all-expenses',
-              icon: 'account_balance_wallet',
+              name: "all expenses",
+              link: "/expenses/all-expenses",
+              icon: "account_balance_wallet"
             },
             {
-              name: 'add expenses',
-              link: '/expenses/add-expenses',
-              icon: 'account_balance_wallet',
+              name: "add expenses",
+              link: "/expenses/add-expenses",
+              icon: "account_balance_wallet"
             },
             {
-              name: 'analysis',
-              link: '/expenses/analysis',
-              icon: 'account_balance_wallet',
-            },
-          ],
+              name: "analysis",
+              link: "/expenses/analysis",
+              icon: "account_balance_wallet"
+            }
+          ]
         },
         {
-          name: 'Loans',
-          link: '/loans/all-loans',
-          icon: 'account_balance',
+          name: "Loans",
+          link: "/loans/all-loans",
+          icon: "account_balance",
           sub_items: [
             {
-              name: 'all loans',
-              link: '/loans/all-loans',
+              name: "all loans",
+              link: "/loans/all-loans"
             },
             {
-              link: '/loans/add-loan',
-              name: 'add loan',
-            },
-          ],
+              link: "/loans/add-loan",
+              name: "add loan"
+            }
+          ]
         },
         {
-          name: 'Profile',
-          icon: 'person',
+          name: "Profile",
+          icon: "person"
         },
         {
-          name: 'more',
-          icon: 'more_horiz',
-        },
-      ],
+          name: "more",
+          icon: "more_horiz"
+        }
+      ]
     };
   },
   computed: {
@@ -136,8 +136,8 @@ export default Vue.extend({
       },
       heading(state: CalculatorInterface) {
         return state.heading;
-      },
-    }),
-  },
+      }
+    })
+  }
 });
 </script>

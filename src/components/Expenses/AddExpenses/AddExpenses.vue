@@ -49,28 +49,28 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import { addExpense } from '@/core/supabase_handlers/expenses/add_expense';
+import Vue from "vue";
+import { addExpense } from "@/core/supabase_handlers/expenses/add_expense";
 
 export default Vue.extend({
-  name: 'AddExpenses',
+  name: "AddExpenses",
   methods: {
     addExpenseEvent() {
-      addExpense(this.formData).then((val) => {
+      addExpense(this.formData).then(val => {
         console.log(val);
       });
-    },
+    }
   },
   data() {
     return {
       formData: {
-        title: '',
+        title: "",
         amount: 0,
-        action: 'in',
-        description: '',
-        date: new Date(),
-      },
+        action: "in",
+        description: "",
+        date: new Date()
+      }
     };
-  },
+  }
 });
 </script>

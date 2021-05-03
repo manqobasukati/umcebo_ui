@@ -58,6 +58,6 @@ export function yearly_addition(
     esclation: esclation,
     compound_period: compound_period,
     results: compounds[compounds.length - 1],
-    total_contributions: total_contributions,
+    total_contributions: total_contributions
   };
 }

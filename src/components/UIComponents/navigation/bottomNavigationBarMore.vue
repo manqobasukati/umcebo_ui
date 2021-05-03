@@ -24,7 +24,7 @@
         <div
           :class="{
             'tw-flex tw-flex-col tw-text-center': true,
-            'tw-shadow-inner': item.name === active_item,
+            'tw-shadow-inner': item.name === active_item
           }"
         >
           <i class="material-icons icon-size">{{ item.icon }}</i>
@@ -36,14 +36,14 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 export default Vue.extend({
-  name: 'bottomNavigationBar',
-  props: ['items', 'active_item', 'bar_style', 'more_items'],
+  name: "bottomNavigationBar",
+  props: ["items", "active_item", "bar_style", "more_items"],
 
   data() {
     return {
-      onMore: false,
+      onMore: false
     };
   },
   methods: {
@@ -52,23 +52,23 @@ export default Vue.extend({
         return val.name === name;
       });
 
-      this.$emit('select_item', item);
+      this.$emit("select_item", item);
     },
     selectItem(name: string) {
       const item = this.items.find((val: any) => {
         return val.name === name;
       });
 
-      console.log('This item', item);
+      console.log("This item", item);
 
-      if (item.name === 'more') {
+      if (item.name === "more") {
         this.onMore = !this.onMore;
         return;
       }
 
-      this.$emit('select_item', item);
-    },
-  },
+      this.$emit("select_item", item);
+    }
+  }
 });
 </script>
 
