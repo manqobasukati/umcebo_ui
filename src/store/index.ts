@@ -9,8 +9,11 @@ import expenses from './expenses';
 
 Vue.use(Vuex);
 
+
 export enum MODULES {
-  'EXPENSES' = 'expenses'
+  'EXPENSES'='expenses',
+  'CALCULATOR'='calculate',
+
 }
 
 const store = new Vuex.Store<StateInterface>({
