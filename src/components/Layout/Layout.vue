@@ -70,6 +70,7 @@ export default Vue.extend({
       more_items: [
         {
           name: 'Calculators',
+          link: '/calculator/calculate',
           icon: 'functions',
         },
         {

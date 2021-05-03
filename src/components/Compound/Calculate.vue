@@ -117,6 +117,8 @@ export default Vue.extend({
             name: 'results',
             link: '/calculator/results',
           });
+
+          this.$router.push({path:'/calculator/results'})
         });
       }, 2000);
     },

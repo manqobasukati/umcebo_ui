@@ -6,11 +6,35 @@ Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
+    path: '/calculator',
+    name: 'Calculator',
+    children: [
+      {
+        path: '/calculator/calculate',
+        name: 'Calculate',
+        component: () => {
+          return import('@/components/Compound/Calculate.vue');
+        },
+      },
+      {
+        path: '/calculator/results',
+        name: 'Results',
+        component: () => {
+          return import('@/components/Compound/Results.vue');
+        },
+      },
+    ],
+    component: () => {
+      return import('@/components/Compound/Calculator.vue');
+    },
+  },
+  {
     path: '/',
     name: 'Layout',
     component: () => {
       return import('@/components/Layout/Layout.vue');
     },
+
     children: [
       {
         path: '/loans',

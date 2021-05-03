@@ -8,7 +8,7 @@
       <div
         v-for="(item, key) in more_items"
         :key="key"
-        @click="selectItem(item.name)"
+        @click="selectMoreItem(item.name)"
         class="tw-flex tw-justify-between tw-w-full"
       >
         <div class="tw-text-md">{{ item.name }}</div>
@@ -47,10 +47,19 @@ export default Vue.extend({
     };
   },
   methods: {
+    selectMoreItem(name: string) {
+      const item = this.more_items.find((val: any) => {
+        return val.name === name;
+      });
+
+      this.$emit('select_item', item);
+    },
     selectItem(name: string) {
       const item = this.items.find((val: any) => {
         return val.name === name;
       });
+
+      console.log('This item', item);
 
       if (item.name === 'more') {
         this.onMore = !this.onMore;

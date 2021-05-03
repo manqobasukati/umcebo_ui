@@ -36,7 +36,7 @@ export default Vue.extend({
     changeActiveItem(_active_item: string) {
       this.active_item = _active_item;
       this.$emit('set_active_item', _active_item);
-
+     
       if (this.active_item.link) {
         console.log('here');
         EventBus.$emit(EVENT_BUS_EVENTS.CHANGE_NAVIGATION, _active_item);

@@ -6,6 +6,7 @@
       </div>
       <div class="tw-flex tw-overflow-y-hidden">
         <horizontal-item-slider
+          @set_active_item="setActiveItem"
           :scroll_items="items.sub_items"
           :item_active_class="'tw-border-b-4'"
           :item_style_style="'min-width:8rem; min-height:2rem'"
@@ -24,5 +25,11 @@ export default Vue.extend({
   },
   name: 'Headings',
   props: ['items'],
+  methods:{
+    setActiveItem(data:any){
+    
+      this.$emit('headings_set_active_item',data)
+    }
+  }
 });
 </script>
